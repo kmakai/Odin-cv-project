@@ -33,11 +33,11 @@ class PersonInfoEdit extends Component {
   render(){
     return (
       <div>
-        <form >
-          <div><input type="text" placeholder="Your Name: John Doe" /></div>
-          <div><input type="text" placeholder="Your Title: Manager" /></div>
-          <div><input type="text" placeholder="Your Number: 860-555-5555" /></div>
-         <div><input type="text" placeholder="Your Email: JohnDoe@example.com" /></div>
+        <form onSubmite={props.handleInfoSub}>
+          <div><input type="text" placeholder="Your Name: John Doe" id="input-name"/></div>
+          <div><input type="text" placeholder="Your Title: Manager" id="input-title"/></div>
+          <div><input type="text" placeholder="Your Number: 860-555-5555" id="input-number"/></div>
+         <div><input type="text" placeholder="Your Email: JohnDoe@example.com" id="input-email"/></div>
          <button type="submit">submit</button>
         </form>
       </div>

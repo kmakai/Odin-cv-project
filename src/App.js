@@ -11,19 +11,31 @@ class App extends Component {
         title: 'Designer',
         phone: '860-555-5555',
         email: 'John.doe@example.com',
+        isSubmitted: true,
       },
     };
+
+
+    this.handleInfoSubmit = this.handleInfoSubmit.bind(this);
+  }
+
+
+  handleInfoSubmit(){
+    
   }
 
   render() {
-    const {info} = this.state;
+    const { info } = this.state;
     return (
       <div>
-        <h1></h1>
-        <PersonInfo
-          info={info}
-        />
-        <PersonInfoEdit />
+        <div>
+          <PersonInfo info={info} />
+          {!info.isSubmitted && <PersonInfoEdit />}
+        </div>
+        <div>
+          <h2>Education</h2>
+          <hr />
+        </div>
       </div>
     );
   }
