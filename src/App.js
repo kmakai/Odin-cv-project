@@ -1,11 +1,21 @@
-import React from "react";
-import "./styles/Appstyle.css";
+import React, { Component } from 'react';
+import './styles/Appstyle.css';
+import {PersonInfo, PersonInfoEdit} from './components/PersonInfo.js';
 
-export default function App() {
-  return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+  }
+
+  render() {
+    return (
+      <div>
+        <h1></h1>
+        <PersonInfo info={{ name: 'John Doe', title: "Designer", phone: "860-555-5555", email: "John.doe@example.com" }} />
+        <PersonInfoEdit />
+      </div>
+    );
+  }
 }
+
+export default App;
