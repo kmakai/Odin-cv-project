@@ -7,6 +7,7 @@ class PersonInfo extends Component {
 
   render() {
     const { info } = this.props;
+    const {handleEdit} = this.props;
     return (
       <div>
         <div>
@@ -31,9 +32,10 @@ class PersonInfoEdit extends Component {
   }
 
   render(){
+    const handleSub = this.props.handleInfoSub;
     return (
       <div>
-        <form onSubmite={props.handleInfoSub}>
+        <form onSubmit={handleSub}>
           <div><input type="text" placeholder="Your Name: John Doe" id="input-name"/></div>
           <div><input type="text" placeholder="Your Title: Manager" id="input-title"/></div>
           <div><input type="text" placeholder="Your Number: 860-555-5555" id="input-number"/></div>
