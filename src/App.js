@@ -69,7 +69,7 @@ class App extends Component {
     return (
       <div>
         <div>
-          <PersonInfo info={info} />
+          <PersonInfo info={info} handleEdit={this.handleInfoEdit}/>
           {!info.isSubmitted && <PersonInfoEdit handleInfoSub={this.handleInfoSubmit}/>}
         </div>
         <div>
