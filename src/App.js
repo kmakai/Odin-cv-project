@@ -93,7 +93,14 @@ class App extends Component {
           schoolName: schoolInput.value,
           major: majorInput.value,
         },
-        entries: this.edu.entries.concat(this.state.edu.entry),
+      },
+    });
+
+    console.log(this.state)
+
+    this.setState({
+      edu: {
+        entries: this.state.edu.entries.concat(this.state.edu.entry),
       },
     });
 
