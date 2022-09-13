@@ -8,7 +8,8 @@ class Education extends Component {
 
   render() {
     const { entries } = this.props;
-    return <div className="entry">{entries.map((entry) => <div> <span>{entry.dates}</span> <span>{entry.schoolName}</span> <span>{entry.major}</span></div>)}</div>;
+    return <div className="entry">{entries.map((entry) => <div> <span>{entry.dates}</span> <span>{entry.schoolName}</span> <span>{entry.major}</span></div>)}
+    <button>Edit</button></div>;
   }
 }
 
