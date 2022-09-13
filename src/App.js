@@ -101,12 +101,19 @@ class App extends Component {
     const datesInput = document.querySelector('#edu-dates');
     const schoolInput = document.querySelector('#edu-school');
     const majorInput = document.querySelector('#edu-major');
+    const [arr] = this.state.edu.entries;
 
-    const entryToEdit = this.state.edu.entries.splice(index, 1);
+    const entryToEdit = arr.splice(index, 1);
 
     datesInput.value = entryToEdit.dates;
     schoolInput.value = entryToEdit.schoolName;
     majorInput.value = entryToEdit.major;
+
+    this.setState({
+      edu: {
+        entries: arr,
+      }
+    })
 
   }
   /* Education Section handlers    */
@@ -123,7 +130,7 @@ class App extends Component {
           <h2>Education</h2>
           <hr />
           <div className="education-wrapper">
-            <Education entries={entries} />
+            <Education entries={entries} handleEduEdit={this.handleEduEdit}/>
             <EducationEdit handleEduSubmit={this.handleEduSubmit} />
           </div>
         </div>
