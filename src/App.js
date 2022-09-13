@@ -90,6 +90,7 @@ class App extends Component {
           <hr />
           <div className="education-wrapper">
             <Education entries={entries} />
+            <EducationEdit />
           </div>
         </div>
       </div>

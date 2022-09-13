@@ -17,3 +17,28 @@
 .entry div > span+span+span {
   grid-row: 2 / 3;
 }
+
+.edu-form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+#edu-dates {
+  grid-row: 1 / 2;
+}
+
+#edu-school {
+  grid-column: 2 / -1;
+  grid-row: 1 / 2;
+}
+
+#edu-major {
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+}
+
+.edu-form button {
+  grid-column: 2 / -1;
+  grid-row: 3 / -1;
+}

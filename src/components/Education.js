@@ -18,7 +18,14 @@ class EducationEdit extends Component {
   }
 
   render() {
-    return <div></div>;
+    return <div>
+      <form className="edu-form">
+        <input type="text" placeholder="Enter dates eg. 2000-2004" id="edu-dates"/>
+        <input type="text" placeholder="Enter school name" id="edu-school" />
+        <input type="text" placeholder="Enter major eg. Social science" id="edu-major" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>;
   }
 }
 
