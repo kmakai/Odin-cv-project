@@ -75,7 +75,15 @@ class App extends Component {
       },
     });
   }
+  /* Info Section handlers   */
 
+  /* Education Section handlers    */
+  handleEduSubmit(){
+    const datesInput = document.querySelector("#edu-dates");
+    const schoolInput = document.querySelector("#edu-school");
+    const majorInput = document.querySelector("#edu-major");
+  }
+  /* Education Section handlers    */
   render() {
     const { info } = this.state;
     const { entries } = this.state.edu;
