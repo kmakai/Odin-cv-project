@@ -1,6 +1,19 @@
 .entry div {
   display: grid;
-  grid-template-columns: auto auto;
-  grid-auto-rows: auto auto;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: 1fr 1fr;
+  column-gap: 10rem;
 }
 
+.entry div > span {
+  grid-row: 1 / -1;
+}
+
+.entry div > span+span {
+  grid-column: 2 / -1;
+  grid-row: 1 / 2;
+}
+
+.entry div > span+span+span {
+  grid-row: 2 / 3;
+}
