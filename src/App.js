@@ -46,10 +46,10 @@ class App extends Component {
     const emailInput = document.querySelector("#input-email");
     const {info} = this.state;
 
-    nameInput.value = info.name;
-    titleInput.value = info.title;
-    numberInput.value = info.phone;
-    emailInput.value = info.email;
+    nameInput.value = info.name ? info.name : '';
+    titleInput.value = info.title ? info.title : '';
+    numberInput.value = info.phone ? info.phone : ' ';
+    emailInput.value = info.email ? info.email : " ";
 
     this.setState({
       info: {
@@ -70,7 +70,7 @@ class App extends Component {
       <div>
         <div className="info">
           <PersonInfo info={info} handleEdit={this.handleInfoEdit}/>
-          {!info.isSubmitted && <PersonInfoEdit handleInfoSub={this.handleInfoSubmit}/>}
+         <PersonInfoEdit handleInfoSub={this.handleInfoSubmit}/>
         </div>
         <div>
           <h2>Education</h2>
