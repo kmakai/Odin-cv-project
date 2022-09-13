@@ -7,7 +7,7 @@ class Education extends Component {
 
   render() {
     const { entries } = this.props;
-    return (<div>{entries.map((entry) => entry.dates)}</div>);
+    return <div className="entry">{entries.map((entry) => <div> <span>{entry.dates}</span> <span>{entry.schoolName}</span> <span>{entry.major}</span></div>)}</div>;
   }
 }
 
@@ -17,7 +17,7 @@ class EducationEdit extends Component {
   }
 
   render() {
-    return( <div></div>);
+    return <div></div>;
   }
 }
 
