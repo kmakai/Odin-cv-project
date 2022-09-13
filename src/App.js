@@ -49,7 +49,7 @@ class App extends Component {
     nameInput.value = info.name;
     titleInput.value = info.title;
     numberInput.value = info.phone;
-    emailInput.value = info.phone;
+    emailInput.value = info.email;
 
     this.setState({
       info: {
