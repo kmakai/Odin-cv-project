@@ -95,13 +95,11 @@ class App extends Component {
     datesInput.value = schoolInput.value = majorInput.value = '';
   }
 
-
-
-  handleEduEdit(index){
+  handleEduEdit(index) {
     const datesInput = document.querySelector('#edu-dates');
     const schoolInput = document.querySelector('#edu-school');
     const majorInput = document.querySelector('#edu-major');
-    const [arr] = this.state.edu.entries;
+    const arr = this.state.edu.entries;
 
     const entryToEdit = arr.splice(index, 1);
 
@@ -112,9 +110,8 @@ class App extends Component {
     this.setState({
       edu: {
         entries: arr,
-      }
-    })
-
+      },
+    });
   }
   /* Education Section handlers    */
   render() {
@@ -130,7 +127,7 @@ class App extends Component {
           <h2>Education</h2>
           <hr />
           <div className="education-wrapper">
-            <Education entries={entries} handleEduEdit={this.handleEduEdit}/>
+            <Education entries={entries} handleEduEdit={this.handleEduEdit} />
             <EducationEdit handleEduSubmit={this.handleEduSubmit} />
           </div>
         </div>

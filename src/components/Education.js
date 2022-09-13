@@ -8,15 +8,15 @@ class Education extends Component {
 
   render() {
     const { entries } = this.props;
-    const {handleEduEdit} = this.props;
+    const { handleEduEdit } = this.props;
     return (
       <div className="entries">
-        {entries.map((entry) => (
+        {entries.map((entry, index) => (
           <div>
             {' '}
             <span>{entry.dates}</span> <span>{entry.schoolName}</span>{' '}
             <span>{entry.major}</span>
-            <button onClick={handleEduEdit}>Edit</button>
+            <button onClick={handleEduEdit(index)}>Edit</button>
           </div>
         ))}
       </div>
