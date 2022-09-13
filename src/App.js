@@ -68,7 +68,7 @@ class App extends Component {
     const { info } = this.state;
     return (
       <div>
-        <div>
+        <div className="info">
           <PersonInfo info={info} handleEdit={this.handleInfoEdit}/>
           {!info.isSubmitted && <PersonInfoEdit handleInfoSub={this.handleInfoSubmit}/>}
         </div>
