@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/Appstyle.css';
 import { PersonInfo, PersonInfoEdit } from './components/PersonInfo.js';
-import { Eduction, EducationEdit } from './components/Education.js';
+import { Education, EducationEdit } from './components/Education.js';
 
 class App extends Component {
   constructor() {
@@ -20,11 +20,13 @@ class App extends Component {
           schoolName: '',
           major: '',
         },
-        entries: [{
-          dates: '2004-2008',
-          schoolName: 'Example University',
-          major: 'Exmple Sciences',
-        }],
+        entries: [
+          {
+            dates: '2004-2008',
+            schoolName: 'Example University',
+            major: 'Exmple Sciences',
+          },
+        ],
       },
     };
 
@@ -76,6 +78,7 @@ class App extends Component {
 
   render() {
     const { info } = this.state;
+    const { entries } = this.state.edu;
     return (
       <div>
         <div className="info">
@@ -85,7 +88,9 @@ class App extends Component {
         <div className="education">
           <h2>Education</h2>
           <hr />
-          <div className="education-wrapper"></div>
+          <div className="education-wrapper">
+            <Education entries={entries} />
+          </div>
         </div>
       </div>
     );

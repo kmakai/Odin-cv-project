@@ -6,14 +6,8 @@ class Education extends Component {
   }
 
   render() {
-    const {entries} = this.props;
-    return <div>
-      {
-        entries.forEach(entry =>{
-          return <div> </div>
-        })
-      }
-    </div>;
+    const { entries } = this.props;
+    return (<div>{entries.map((entry) => entry.dates)}</div>);
   }
 }
 
@@ -23,7 +17,7 @@ class EducationEdit extends Component {
   }
 
   render() {
-    return <div></div>;
+    return( <div></div>);
   }
 }
 
