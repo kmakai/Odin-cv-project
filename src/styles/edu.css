@@ -1,0 +1,6 @@
+.entry div {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: auto auto;
+}
+
