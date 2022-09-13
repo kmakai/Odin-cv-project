@@ -29,6 +29,7 @@ class App extends Component {
     this.handleInfoEdit = this.handleInfoEdit.bind(this);
 
     this.handleEduSubmit = this.handleEduSubmit.bind(this);
+    this.handleEduEdit = this.handleEduEdit.bind(this);
   }
 
   /* Info Section handlers   */
@@ -90,7 +91,23 @@ class App extends Component {
         }),
       },
     });
-    console.log(this.state);
+
+    datesInput.value = schoolInput.value = majorInput.value = '';
+  }
+
+
+
+  handleEduEdit(index){
+    const datesInput = document.querySelector('#edu-dates');
+    const schoolInput = document.querySelector('#edu-school');
+    const majorInput = document.querySelector('#edu-major');
+
+    const entryToEdit = this.state.edu.entries.splice(index, 1);
+
+    datesInput.value = entryToEdit.dates;
+    schoolInput.value = entryToEdit.schoolName;
+    majorInput.value = entryToEdit.major;
+
   }
   /* Education Section handlers    */
   render() {
