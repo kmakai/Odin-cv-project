@@ -9,15 +9,15 @@ class Education extends Component {
   render() {
     const { entries } = this.props;
     return (
-      <div className="entry">
+      <div className="entries">
         {entries.map((entry) => (
           <div>
             {' '}
             <span>{entry.dates}</span> <span>{entry.schoolName}</span>{' '}
             <span>{entry.major}</span>
+            <button>Edit</button>
           </div>
         ))}
-        <button>Edit</button>
       </div>
     );
   }

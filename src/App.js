@@ -15,11 +15,6 @@ class App extends Component {
         isSubmitted: false,
       },
       edu: {
-        entry: {
-          dates: '',
-          schoolName: '',
-          major: '',
-        },
         entries: [
           {
             dates: '2004-2008',
@@ -88,31 +83,14 @@ class App extends Component {
 
     this.setState({
       edu: {
-        entry: {
+        entries: this.state.edu.entries.concat({
           dates: datesInput.value,
           schoolName: schoolInput.value,
           major: majorInput.value,
-        },
+        }),
       },
     });
-
-    console.log(this.state)
-
-    this.setState({
-      edu: {
-        entries: this.state.edu.entries.concat(this.state.edu.entry),
-      },
-    });
-
-    this.setState({
-      edu: {
-        entry: {
-          dates: '',
-          schoolName: '',
-          major: '',
-        },
-      },
-    });
+    console.log(this.state);
   }
   /* Education Section handlers    */
   render() {
