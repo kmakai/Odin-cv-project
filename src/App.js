@@ -32,6 +32,8 @@ class App extends Component {
 
     this.handleInfoSubmit = this.handleInfoSubmit.bind(this);
     this.handleInfoEdit = this.handleInfoEdit.bind(this);
+
+    this.handleEduSubmit = this.handleEduSubmit.bind(this);
   }
 
   /* Info Section handlers   */
@@ -78,10 +80,32 @@ class App extends Component {
   /* Info Section handlers   */
 
   /* Education Section handlers    */
-  handleEduSubmit(){
-    const datesInput = document.querySelector("#edu-dates");
-    const schoolInput = document.querySelector("#edu-school");
-    const majorInput = document.querySelector("#edu-major");
+  handleEduSubmit(e) {
+    e.preventDefault();
+    const datesInput = document.querySelector('#edu-dates');
+    const schoolInput = document.querySelector('#edu-school');
+    const majorInput = document.querySelector('#edu-major');
+
+    this.setState({
+      edu: {
+        entry: {
+          dates: datesInput.value,
+          schoolName: schoolInput.value,
+          major: majorInput.value,
+        },
+        entries: this.edu.entries.concat(this.state.edu.entry),
+      },
+    });
+
+    this.setState({
+      edu: {
+        entry: {
+          dates: '',
+          schoolName: '',
+          major: '',
+        },
+      },
+    });
   }
   /* Education Section handlers    */
   render() {
@@ -98,7 +122,7 @@ class App extends Component {
           <hr />
           <div className="education-wrapper">
             <Education entries={entries} />
-            <EducationEdit />
+            <EducationEdit handleEduSubmit={this.handleEduSubmit} />
           </div>
         </div>
       </div>
