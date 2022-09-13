@@ -7,7 +7,7 @@ class PersonInfo extends Component {
 
   render() {
     const { info } = this.props;
-    const {handleEdit} = this.props;
+    const { handleEdit } = this.props;
     return (
       <div>
         <div>
@@ -31,20 +31,44 @@ class PersonInfoEdit extends Component {
     super(props);
   }
 
-  render(){
+  render() {
     const handleSub = this.props.handleInfoSub;
     return (
       <div>
         <form onSubmit={handleSub}>
-          <div><input type="text" placeholder="Your Name: John Doe" id="input-name"/></div>
-          <div><input type="text" placeholder="Your Title: Manager" id="input-title"/></div>
-          <div><input type="text" placeholder="Your Number: 860-555-5555" id="input-number"/></div>
-         <div><input type="text" placeholder="Your Email: JohnDoe@example.com" id="input-email"/></div>
-         <button type="submit">submit</button>
+          <div>
+            <input
+              type="text"
+              placeholder="Your Name: John Doe"
+              id="input-name"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Your Title: Manager"
+              id="input-title"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Your Number: 860-555-5555"
+              id="input-number"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Your Email: JohnDoe@example.com"
+              id="input-email"
+            />
+          </div>
+          <button type="submit">submit</button>
         </form>
       </div>
     );
   }
 }
 
-export {PersonInfo, PersonInfoEdit};
+export { PersonInfo, PersonInfoEdit };

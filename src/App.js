@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles/Appstyle.css';
 import { PersonInfo, PersonInfoEdit } from './components/PersonInfo.js';
+import { Eduction, EducationEdit } from './components/Education.js';
 
 class App extends Component {
   constructor() {
@@ -13,20 +14,31 @@ class App extends Component {
         email: 'John.doe@example.com',
         isSubmitted: false,
       },
+      edu: {
+        entry: {
+          dates: '',
+          schoolName: '',
+          major: '',
+        },
+        entries: [{
+          dates: '2004-2008',
+          schoolName: 'Example University',
+          major: 'Exmple Sciences',
+        }],
+      },
     };
-
 
     this.handleInfoSubmit = this.handleInfoSubmit.bind(this);
     this.handleInfoEdit = this.handleInfoEdit.bind(this);
   }
 
-
-  handleInfoSubmit(e){
+  /* Info Section handlers   */
+  handleInfoSubmit(e) {
     e.preventDefault();
-    const nameInput = document.querySelector("#input-name");
-    const titleInput = document.querySelector("#input-title");
-    const numberInput = document.querySelector("#input-number");
-    const emailInput = document.querySelector("#input-email");
+    const nameInput = document.querySelector('#input-name');
+    const titleInput = document.querySelector('#input-title');
+    const numberInput = document.querySelector('#input-number');
+    const emailInput = document.querySelector('#input-email');
 
     this.setState({
       info: {
@@ -35,46 +47,45 @@ class App extends Component {
         phone: numberInput.value,
         email: emailInput.value,
         isSubmitted: true,
-      }
-    })
+      },
+    });
   }
 
-  handleInfoEdit(){
-    const nameInput = document.querySelector("#input-name");
-    const titleInput = document.querySelector("#input-title");
-    const numberInput = document.querySelector("#input-number");
-    const emailInput = document.querySelector("#input-email");
-    const {info} = this.state;
+  handleInfoEdit() {
+    const nameInput = document.querySelector('#input-name');
+    const titleInput = document.querySelector('#input-title');
+    const numberInput = document.querySelector('#input-number');
+    const emailInput = document.querySelector('#input-email');
+    const { info } = this.state;
 
     nameInput.value = info.name ? info.name : '';
     titleInput.value = info.title ? info.title : '';
-    numberInput.value = info.phone ? info.phone : ' ';
-    emailInput.value = info.email ? info.email : " ";
+    numberInput.value = info.phone ? info.phone : '';
+    emailInput.value = info.email ? info.email : '';
 
     this.setState({
       info: {
         name: '',
-        title: "",
-        phone: "",
-        email: "",
+        title: '',
+        phone: '',
+        email: '',
         isSubmitted: false,
-      }
-    })
+      },
+    });
   }
-
-
 
   render() {
     const { info } = this.state;
     return (
       <div>
         <div className="info">
-          <PersonInfo info={info} handleEdit={this.handleInfoEdit}/>
-         <PersonInfoEdit handleInfoSub={this.handleInfoSubmit}/>
+          <PersonInfo info={info} handleEdit={this.handleInfoEdit} />
+          <PersonInfoEdit handleInfoSub={this.handleInfoSubmit} />
         </div>
-        <div>
+        <div className="education">
           <h2>Education</h2>
           <hr />
+          <div className="education-wrapper"></div>
         </div>
       </div>
     );
