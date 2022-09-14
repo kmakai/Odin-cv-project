@@ -148,6 +148,7 @@ class App extends Component {
           <hr />
           <div className="experience-wrapper">
             <Experience expEntries={expEntries}/>
+            <ExperienceEdit />
           </div>
         </div>
       </div>

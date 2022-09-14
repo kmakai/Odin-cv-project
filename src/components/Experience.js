@@ -9,13 +9,14 @@ class Experience extends Component {
     const { expEntries } = this.props;
     const { handleExEdit } = this.props;
     return (
-      <div className="entries">
+      <div className="exp-entries">
         {expEntries.map((entry, index) => (
           <div>
             {' '}
-            <span>{entry.dates}</span> <span>{entry.compnayName}</span>{' '}
-            <span>{entry.title}</span>
-            <p>{entry.desc}</p>
+            <span className="exp-entrydates">{entry.dates}</span> <span className="exp-entrycompany">{entry.companyName}</span>{' '}
+            <br />
+            <span className="exp-entrytitle">{entry.title}</span>
+            <p className="exp-entrydesc">{entry.desc}</p>
             <button onClick={() => handleExEdit(index)}>Edit</button>
           </div>
         ))}
@@ -30,10 +31,10 @@ class ExperienceEdit extends Component {
   }
 
   render() {
-    const { handleExpSubmit } = this.props;
+    // const { handleExpSubmit } = this.props;
     return (
       <div>
-        <form className="exp-form" onSubmit={handleEduSubmit}>
+        <form className="exp-form" >
           <input
             type="text"
             placeholder="Enter dates eg. 2000-2004"
