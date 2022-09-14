@@ -7,11 +7,11 @@ class Education extends Component {
   }
 
   render() {
-    const { entries } = this.props;
+    const { eduEntries } = this.props;
     const { handleEEdit } = this.props;
     return (
       <div className="entries">
-        {entries.map((entry, index) => (
+        {eduEntries.map((entry, index) => (
           <div>
             {' '}
             <span>{entry.dates}</span> <span>{entry.schoolName}</span>{' '}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles/Appstyle.css';
 import { PersonInfo, PersonInfoEdit } from './components/PersonInfo.js';
 import { Education, EducationEdit } from './components/Education.js';
+import { Experience, ExperienceEdit } from './components/Experience.js';
 
 class App extends Component {
   constructor() {
@@ -15,11 +16,21 @@ class App extends Component {
         isSubmitted: false,
       },
       edu: {
-        entries: [
+        eduEntries: [
           {
             dates: '2004-2008',
             schoolName: 'Example University',
             major: 'Exmple Sciences',
+          },
+        ],
+      },
+      exp: {
+        expEntries: [
+          {
+            dates: '2004-2008',
+            companyName: 'Example Company',
+            title: 'Manager',
+            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo fringilla lobortis. Aliquam vitae maximus sem, nec laoreet libero. In nec aliquam ex, vitae laoreet.",
           },
         ],
       },
@@ -107,7 +118,6 @@ class App extends Component {
     schoolInput.value = entryToEdit.schoolName;
     majorInput.value = entryToEdit.major;
 
-  
     this.setState({
       edu: {
         entries: arr,
@@ -117,7 +127,8 @@ class App extends Component {
   /* Education Section handlers */
   render() {
     const { info } = this.state;
-    const { entries } = this.state.edu;
+    const { eduEntries } = this.state.edu;
+    const { expEntries } = this.state.exp;
     return (
       <div>
         <div className="info">
@@ -128,8 +139,15 @@ class App extends Component {
           <h2>Education</h2>
           <hr />
           <div className="education-wrapper">
-            <Education entries={entries} handleEEdit={this.handleEduEdit} />
+            <Education eduEntries={eduEntries} handleEEdit={this.handleEduEdit} />
             <EducationEdit handleEduSubmit={this.handleEduSubmit} />
+          </div>
+        </div>
+        <div className="experience">
+          <h2>Experience</h2>
+          <hr />
+          <div className="experience-wrapper">
+            <Experience expEntries={expEntries}/>
           </div>
         </div>
       </div>
