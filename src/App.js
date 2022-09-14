@@ -43,6 +43,7 @@ class App extends Component {
     this.handleEduEdit = this.handleEduEdit.bind(this);
 
     this.handleExpSubmit = this.handleExpSubmit.bind(this);
+    this.handleExpEdit = this.handleExpEdit.bind(this)
   }
 
   /* Info Section handlers  */
@@ -194,7 +195,7 @@ class App extends Component {
           <h2>Experience</h2>
           <hr />
           <div className="experience-wrapper">
-            <Experience expEntries={expEntries} />
+            <Experience expEntries={expEntries} handleExpEdit={this.handleExpEdit}/>
             <ExperienceEdit handleExpSubmit={this.handleExpSubmit} />
           </div>
         </div>
