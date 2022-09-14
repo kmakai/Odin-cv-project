@@ -32,7 +32,7 @@ class App extends Component {
     this.handleEduEdit = this.handleEduEdit.bind(this);
   }
 
-  /* Info Section handlers   */
+  /* Info Section handlers  */
   handleInfoSubmit(e) {
     e.preventDefault();
     const nameInput = document.querySelector('#input-name');
@@ -73,9 +73,9 @@ class App extends Component {
       },
     });
   }
-  /* Info Section handlers   */
+  /* Info Section handlers */
 
-  /* Education Section handlers    */
+  /* Education Section handlers */
   handleEduSubmit(e) {
     e.preventDefault();
     const datesInput = document.querySelector('#edu-dates');
@@ -114,7 +114,7 @@ class App extends Component {
       },
     });
   }
-  /* Education Section handlers    */
+  /* Education Section handlers */
   render() {
     const { info } = this.state;
     const { entries } = this.state.edu;
