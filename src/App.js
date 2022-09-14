@@ -30,7 +30,7 @@ class App extends Component {
             dates: '2004-2008',
             companyName: 'Example Company',
             title: 'Manager',
-            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo fringilla lobortis. Aliquam vitae maximus sem, nec laoreet libero. In nec aliquam ex, vitae laoreet.",
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo fringilla lobortis. Aliquam vitae maximus sem, nec laoreet libero. In nec aliquam ex, vitae laoreet.',
           },
         ],
       },
@@ -41,6 +41,8 @@ class App extends Component {
 
     this.handleEduSubmit = this.handleEduSubmit.bind(this);
     this.handleEduEdit = this.handleEduEdit.bind(this);
+
+    this.handleExpSubmit = this.handleExpSubmit.bind(this);
   }
 
   /* Info Section handlers  */
@@ -95,7 +97,7 @@ class App extends Component {
 
     this.setState({
       edu: {
-        entries: this.state.edu.entries.concat({
+        eduEntries: this.state.edu.eduEntries.concat({
           dates: datesInput.value,
           schoolName: schoolInput.value,
           major: majorInput.value,
@@ -110,7 +112,7 @@ class App extends Component {
     const datesInput = document.querySelector('#edu-dates');
     const schoolInput = document.querySelector('#edu-school');
     const majorInput = document.querySelector('#edu-major');
-    const arr = this.state.edu.entries;
+    const arr = this.state.edu.eduEntries;
 
     const [entryToEdit] = arr.splice(index, 1);
 
@@ -120,11 +122,53 @@ class App extends Component {
 
     this.setState({
       edu: {
-        entries: arr,
+        eduEntries: arr,
       },
     });
   }
   /* Education Section handlers */
+
+  /* Experience Section handlers */
+  handleExpSubmit(e) {
+    e.preventDefault();
+    const datesInput = document.querySelector('#exp-dates');
+    const companyInput = document.querySelector('#exp-company');
+    const titleInput = document.querySelector('#exp-title');
+    const descInput = document.querySelector('#exp-desc');
+
+    this.setState({
+      exp: {
+        expEntries: this.state.exp.expEntries.concat({
+          dates: datesInput.value,
+          companyName: companyInput.value,
+          title: titleInput.value,
+          desc: descInput.value,
+        }),
+      },
+    });
+  }
+
+  handleExpEdit(index) {
+    const datesInput = document.querySelector('#exp-dates');
+    const companyInput = document.querySelector('#exp-company');
+    const titleInput = document.querySelector('#exp-title');
+    const descInput = document.querySelector('#exp-desc');
+    const arr = this.state.exp.expEntries;
+    const [entryToEdit] = arr.splice(index, 1);
+
+    datesInput.value = entryToEdit.dates;
+    companyInput.value = entryToEdit.companyName;
+    titleInput.value = entryToEdit.title;
+    descInput.value = entryToEdit.desc;
+
+    this.setState({
+      exp: {
+        expEntries: arr,
+      },
+    });
+  }
+  /* Experience Section handlers */
+
   render() {
     const { info } = this.state;
     const { eduEntries } = this.state.edu;
@@ -139,7 +183,10 @@ class App extends Component {
           <h2>Education</h2>
           <hr />
           <div className="education-wrapper">
-            <Education eduEntries={eduEntries} handleEEdit={this.handleEduEdit} />
+            <Education
+              eduEntries={eduEntries}
+              handleEEdit={this.handleEduEdit}
+            />
             <EducationEdit handleEduSubmit={this.handleEduSubmit} />
           </div>
         </div>
@@ -147,8 +194,8 @@ class App extends Component {
           <h2>Experience</h2>
           <hr />
           <div className="experience-wrapper">
-            <Experience expEntries={expEntries}/>
-            <ExperienceEdit />
+            <Experience expEntries={expEntries} />
+            <ExperienceEdit handleExpSubmit={this.handleExpSubmit} />
           </div>
         </div>
       </div>

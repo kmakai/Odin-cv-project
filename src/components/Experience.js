@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/exp.css';
 
 class Experience extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class Experience extends Component {
 
   render() {
     const { expEntries } = this.props;
-    const { handleExEdit } = this.props;
+    const { handleExpEdit } = this.props;
     return (
       <div className="exp-entries">
         {expEntries.map((entry, index) => (
@@ -15,9 +16,9 @@ class Experience extends Component {
             {' '}
             <span className="exp-entrydates">{entry.dates}</span> <span className="exp-entrycompany">{entry.companyName}</span>{' '}
             <br />
-            <span className="exp-entrytitle">{entry.title}</span>
-            <p className="exp-entrydesc">{entry.desc}</p>
-            <button onClick={() => handleExEdit(index)}>Edit</button>
+            <span className="exp-entrytitle">Position: {entry.title}</span>
+            <p className="exp-entrydesc">Duties: <br/>{entry.desc}</p>
+            <button onClick={() => handleExpEdit(index)}>Edit</button>
           </div>
         ))}
       </div>
@@ -31,10 +32,10 @@ class ExperienceEdit extends Component {
   }
 
   render() {
-    // const { handleExpSubmit } = this.props;
+    const { handleExpSubmit } = this.props;
     return (
       <div>
-        <form className="exp-form" >
+        <form className="exp-form" onSubmit={handleExpSubmit}>
           <input
             type="text"
             placeholder="Enter dates eg. 2000-2004"
@@ -46,7 +47,7 @@ class ExperienceEdit extends Component {
             placeholder="Enter title eg. Manager"
             id="exp-title"
           />
-          <textarea id="" cols="30" rows="10" placeholder="Enter a description of your duties"></textarea>
+          <textarea id="exp-desc" cols="30" rows="10" placeholder="Enter a description of your duties"></textarea>
           <button type="submit">Submit</button>
         </form>
       </div>
