@@ -44,6 +44,8 @@ class App extends Component {
 
     this.handleExpSubmit = this.handleExpSubmit.bind(this);
     this.handleExpEdit = this.handleExpEdit.bind(this);
+
+    this.handlePreview = this.handlePreview.bind(this);
   }
 
   /* Info Section handlers  */
@@ -170,12 +172,26 @@ class App extends Component {
   }
   /* Experience Section handlers */
 
+  handlePreview() {
+    const appInput = document.querySelector('.app-input');
+    const appPreview = document.querySelector('.app-preview');
+    const btn = document.querySelector('.preview-btn');
+
+    appInput.classList.toggle('hidden');
+    appPreview.classList.toggle('hidden');
+    btn.textContent =
+      btn.textContent === 'Preview' ? 'Edit' : "Preview";
+  }
+
   render() {
     const { info } = this.state;
     const { eduEntries } = this.state.edu;
     const { expEntries } = this.state.exp;
     return (
       <div className="app-wrapper">
+        <button className="preview-btn" onClick={this.handlePreview}>
+          Preview
+        </button>
         <div className="app-input">
           <div className="info">
             <PersonInfo info={info} handleEdit={this.handleInfoEdit} />
@@ -204,7 +220,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="app-preview">
+        <div className="app-preview hidden">
           <div className="info">
             <PersonInfo info={info} />
           </div>

@@ -17,7 +17,7 @@
   align-self: flex-start;
 }
 
-.app-preview {
+.hidden {
   display: none;
 }
 
