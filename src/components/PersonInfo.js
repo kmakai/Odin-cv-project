@@ -20,7 +20,7 @@ class PersonInfo extends Component {
         <div>
           <span>Email:</span> {info.email}
         </div>
-        <button onClick={handleEdit}>Edit</button>
+       { handleEdit && <button onClick={handleEdit}>Edit</button>}
       </div>
     );
   }

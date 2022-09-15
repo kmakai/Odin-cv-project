@@ -16,7 +16,7 @@ class Education extends Component {
             {' '}
             <span>{entry.dates}</span> <span>{entry.schoolName}</span>{' '}
             <span>{entry.major}</span>
-            <button onClick={() => handleEEdit(index)}>Edit</button>
+            {handleEEdit && <button onClick={() => handleEEdit(index)}>Edit</button>}
           </div>
         ))}
       </div>

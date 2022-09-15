@@ -3,9 +3,12 @@
   justify-content: flex-start;
   align-items: center;
   gap: 24rem;
-
 }
 
 .info:first-child {
   align-self: flex-start;
+}
+
+.app-preview {
+  display: none;
 }

@@ -18,7 +18,7 @@ class Experience extends Component {
             <br />
             <span className="exp-entrytitle">Position: {entry.title}</span>
             <p className="exp-entrydesc">Duties: <br/>{entry.desc}</p>
-            <button onClick={() => handleExpEdit(index)}>Edit</button>
+            {handleExpEdit && <button onClick={() => handleExpEdit(index)}>Edit</button>}
           </div>
         ))}
       </div>

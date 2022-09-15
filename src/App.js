@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './styles/Appstyle.css';
 import { PersonInfo, PersonInfoEdit } from './components/PersonInfo.js';
 import { Education, EducationEdit } from './components/Education.js';
 import { Experience, ExperienceEdit } from './components/Experience.js';
+import './styles/Appstyle.css';
 
 class App extends Component {
   constructor() {
@@ -43,7 +43,7 @@ class App extends Component {
     this.handleEduEdit = this.handleEduEdit.bind(this);
 
     this.handleExpSubmit = this.handleExpSubmit.bind(this);
-    this.handleExpEdit = this.handleExpEdit.bind(this)
+    this.handleExpEdit = this.handleExpEdit.bind(this);
   }
 
   /* Info Section handlers  */
@@ -147,8 +147,6 @@ class App extends Component {
         }),
       },
     });
-
-
   }
 
   handleExpEdit(index) {
@@ -179,31 +177,52 @@ class App extends Component {
     return (
       <div className="app-wrapper">
         <div className="app-input">
-        <div className="info">
-          <PersonInfo info={info} handleEdit={this.handleInfoEdit} />
-          <PersonInfoEdit handleInfoSub={this.handleInfoSubmit} />
-        </div>
-        <div className="education">
-          <h2>Education</h2>
-          <hr />
-          <div className="education-wrapper">
-            <Education
-              eduEntries={eduEntries}
-              handleEEdit={this.handleEduEdit}
-            />
-            <EducationEdit handleEduSubmit={this.handleEduSubmit} />
+          <div className="info">
+            <PersonInfo info={info} handleEdit={this.handleInfoEdit} />
+            <PersonInfoEdit handleInfoSub={this.handleInfoSubmit} />
+          </div>
+          <div className="education">
+            <h2>Education</h2>
+            <hr />
+            <div className="education-wrapper">
+              <Education
+                eduEntries={eduEntries}
+                handleEEdit={this.handleEduEdit}
+              />
+              <EducationEdit handleEduSubmit={this.handleEduSubmit} />
+            </div>
+          </div>
+          <div className="experience">
+            <h2>Experience</h2>
+            <hr />
+            <div className="experience-wrapper">
+              <Experience
+                expEntries={expEntries}
+                handleExpEdit={this.handleExpEdit}
+              />
+              <ExperienceEdit handleExpSubmit={this.handleExpSubmit} />
+            </div>
           </div>
         </div>
-        <div className="experience">
-          <h2>Experience</h2>
-          <hr />
-          <div className="experience-wrapper">
-            <Experience expEntries={expEntries} handleExpEdit={this.handleExpEdit}/>
-            <ExperienceEdit handleExpSubmit={this.handleExpSubmit} />
+        <div className="app-preview">
+          <div className="info">
+            <PersonInfo info={info} />
+          </div>
+          <div className="education">
+            <h2>Education</h2>
+            <hr />
+            <div className="education-wrapper">
+              <Education eduEntries={eduEntries} />
+            </div>
+          </div>
+          <div className="experience">
+            <h2>Experience</h2>
+            <hr />
+            <div className="experience-wrapper">
+              <Experience expEntries={expEntries} />
+            </div>
           </div>
         </div>
-        </div>
-        <div className="app-preview"></div>
       </div>
     );
   }
