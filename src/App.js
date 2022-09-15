@@ -147,6 +147,8 @@ class App extends Component {
         }),
       },
     });
+
+
   }
 
   handleExpEdit(index) {
@@ -175,7 +177,8 @@ class App extends Component {
     const { eduEntries } = this.state.edu;
     const { expEntries } = this.state.exp;
     return (
-      <div>
+      <div className="app-wrapper">
+        <div className="app-input">
         <div className="info">
           <PersonInfo info={info} handleEdit={this.handleInfoEdit} />
           <PersonInfoEdit handleInfoSub={this.handleInfoSubmit} />
@@ -199,6 +202,8 @@ class App extends Component {
             <ExperienceEdit handleExpSubmit={this.handleExpSubmit} />
           </div>
         </div>
+        </div>
+        <div className="app-preview"></div>
       </div>
     );
   }
