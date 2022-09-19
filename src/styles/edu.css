@@ -1,7 +1,9 @@
 .entries {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 4rem;
+
+  font-size: 1.6rem;
 }
 
 .entries div {
@@ -9,6 +11,7 @@
   grid-template-columns: auto 1fr;
   grid-auto-rows: 1fr 1fr;
   column-gap: 10rem;
+  row-gap: .8rem;
 }
 
 .entries div > span {
