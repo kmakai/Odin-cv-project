@@ -1,11 +1,12 @@
 .app-wrapper {
-  border: 1px lightslategray solid;
+  border: 1px #94a3b8 solid;
   width: 8.5in;
   max-height: auto;
   min-height: 11in;
   padding: 15px;
+  color: #1e293b;
+  box-shadow: .2rem .2rem .3rem #94a3b8, -.2rem -.2rem .3rem #94a3b8;
 }
-
 
 .info {
   display: flex;
@@ -23,11 +24,13 @@ h2 {
   font-size: 1.8rem;
 }
 
-.app-input.hidden, .app-preview.hidden {
+.app-input.hidden,
+.app-preview.hidden {
   display: none;
 }
 
-.app-input, .app-preview {
+.app-input,
+.app-preview {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -39,7 +42,8 @@ h2 {
   gap: 1rem;
 }
 
-.edu-form, .exp-form {
+.edu-form,
+.exp-form {
   margin: 2rem 0;
 }
 
@@ -55,3 +59,25 @@ h2 {
   gap: 1rem;
 }
 
+button {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: .2rem;
+  border-radius: .5rem;
+  border: 1px solid #64748b;
+  background-color: #f1f5f9;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #64748b;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: 1px solid #e2e8f0;
+  font-weight: 600;
+  color: #1e293b;
+}

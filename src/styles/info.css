@@ -5,21 +5,31 @@
 }
 
 .personal-info h2 {
-  font-size: 3.4rem;
+  font-size: 3.2rem;
 }
 
 .personal-info h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #475569;
 }
 
 .info-phone,
 .info-email {
   font-size: 1.6rem;
-  font-weight: 600;
 }
 
 .personal-info span {
   font-weight: bold;
   font-size: 1.8rem;
+}
+
+.personal-info-edit form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.personal-info-edit form input {
+  padding: .5rem;
 }

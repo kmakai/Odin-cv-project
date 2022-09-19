@@ -11,10 +11,14 @@
   width: 50%;
 }
 
+.exp-form input, .exp-form textarea {
+  padding: .5rem;
+}
+
 .entry {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 .exp-form button {
   width: 22%;
@@ -24,7 +28,10 @@
   width: 22%;
 }
 
-.exp-entrydates, .exp-entrycompany, .exp-entrytitle, .exp-entrydesc span {
+.exp-entrydates,
+.exp-entrycompany,
+.exp-entrytitle,
+.exp-entrydesc span {
   font-weight: bold;
   font-size: 1.7rem;
 }

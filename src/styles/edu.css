@@ -35,6 +35,10 @@
   gap: 1rem;
 }
 
+.edu-form input {
+  padding: .5rem;
+}
+
 #edu-dates {
   grid-row: 1 / 2;
 }
