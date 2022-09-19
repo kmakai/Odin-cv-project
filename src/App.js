@@ -37,6 +37,12 @@ class App extends Component {
             title: 'Manager',
             desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo fringilla lobortis. Aliquam vitae maximus sem, nec laoreet libero. In nec aliquam ex, vitae laoreet.',
           },
+          {
+            dates: '2004-2008',
+            companyName: 'Example Company',
+            title: 'Manager',
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo fringilla lobortis. Aliquam vitae maximus sem, nec laoreet libero. In nec aliquam ex, vitae laoreet.',
+          },
         ],
       },
     };

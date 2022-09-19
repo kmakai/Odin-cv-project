@@ -1,5 +1,28 @@
+.exp-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.6rem;
+}
+
 .exp-form {
   display: flex;
   flex-direction: column;
   width: 50%;
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.exp-entrydates, .exp-entrycompany, .exp-entrytitle, .exp-entrydesc span {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.exp-entrydesc {
+  display: flex;
+  flex-direction: column;
 }

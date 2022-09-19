@@ -12,13 +12,18 @@ class Experience extends Component {
     return (
       <div className="exp-entries">
         {expEntries.map((entry, index) => (
-          <div>
+          <div className="entry">
             {' '}
-            <span className="exp-entrydates">{entry.dates}</span> <span className="exp-entrycompany">{entry.companyName}</span>{' '}
-            <br />
+            <span className="exp-entrydates">{entry.dates}</span>{' '}
+            <span className="exp-entrycompany">{entry.companyName}</span>
             <span className="exp-entrytitle">Position: {entry.title}</span>
-            <p className="exp-entrydesc">Duties: <br/>{entry.desc}</p>
-            {handleExpEdit && <button onClick={() => handleExpEdit(index)}>Edit</button>}
+            <p className="exp-entrydesc">
+              <span>Duties:</span>
+              {entry.desc}
+            </p>
+            {handleExpEdit && (
+              <button onClick={() => handleExpEdit(index)}>Edit</button>
+            )}
           </div>
         ))}
       </div>
@@ -41,13 +46,22 @@ class ExperienceEdit extends Component {
             placeholder="Enter dates eg. 2000-2004"
             id="exp-dates"
           />
-          <input type="text" placeholder="Enter company name" id="exp-company" />
+          <input
+            type="text"
+            placeholder="Enter company name"
+            id="exp-company"
+          />
           <input
             type="text"
             placeholder="Enter title eg. Manager"
             id="exp-title"
           />
-          <textarea id="exp-desc" cols="30" rows="10" placeholder="Enter a description of your duties"></textarea>
+          <textarea
+            id="exp-desc"
+            cols="30"
+            rows="10"
+            placeholder="Enter a description of your duties"
+          ></textarea>
           <button type="submit">Submit</button>
         </form>
       </div>
@@ -55,4 +69,4 @@ class ExperienceEdit extends Component {
   }
 }
 
-export {Experience, ExperienceEdit}
+export { Experience, ExperienceEdit };

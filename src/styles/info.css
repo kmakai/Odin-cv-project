@@ -13,13 +13,12 @@
   margin-bottom: 1rem;
 }
 
-.info-phone {
-  font-size: 1.4rem;
+.info-phone,
+.info-email {
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
-.info-email {
-  font-size: 1.4rem;
-}
 .personal-info span {
   font-weight: bold;
   font-size: 1.8rem;

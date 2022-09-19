@@ -38,3 +38,9 @@ h2 {
   gap: 1rem;
 }
 
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
