@@ -38,6 +38,14 @@ h2 {
   gap: 1rem;
 }
 
+.edu-form, .exp-form {
+  margin: 2rem 0;
+}
+
+.exp-form {
+  
+}
+
 .experience {
   display: flex;
   flex-direction: column;
