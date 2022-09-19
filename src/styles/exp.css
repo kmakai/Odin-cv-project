@@ -16,6 +16,13 @@
   flex-direction: column;
   gap: .5rem;
 }
+.exp-form button {
+  width: 22%;
+}
+
+.entry button {
+  width: 22%;
+}
 
 .exp-entrydates, .exp-entrycompany, .exp-entrytitle, .exp-entrydesc span {
   font-weight: bold;

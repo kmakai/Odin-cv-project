@@ -1,7 +1,8 @@
 .app-wrapper {
   border: 1px lightslategray solid;
   width: 8.5in;
-  height: 11in;
+  max-height: auto;
+  min-height: 11in;
   padding: 15px;
 }
 
@@ -43,7 +44,9 @@ h2 {
 }
 
 .exp-form {
-  
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .experience {
