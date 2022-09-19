@@ -24,6 +24,10 @@
   font-size: 1.8rem;
 }
 
+.personal-info button {
+  margin-top: 1rem;
+}
+
 .personal-info-edit form{
   display: flex;
   flex-direction: column;
