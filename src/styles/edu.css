@@ -1,3 +1,9 @@
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
 .entries div {
   display: grid;
   grid-template-columns: auto 1fr;

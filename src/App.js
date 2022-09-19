@@ -22,6 +22,11 @@ class App extends Component {
             schoolName: 'Example University',
             major: 'Exmple Sciences',
           },
+          {
+            dates: '2004-2008',
+            schoolName: 'Example University',
+            major: 'Exmple Sciences',
+          },
         ],
       },
       exp: {

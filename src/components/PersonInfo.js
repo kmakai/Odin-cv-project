@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "../styles/info.css"
+import '../styles/info.css';
 
 class PersonInfo extends Component {
   constructor(props) {
@@ -10,18 +10,18 @@ class PersonInfo extends Component {
     const { info } = this.props;
     const { handleEdit } = this.props;
     return (
-      <div>
+      <div className="personal-info">
         <div>
           <h2>{info.name}</h2>
           <h3>{info.title}</h3>
         </div>
-        <div>
+        <div className="info-phone">
           <span>Phone:</span> {info.phone}
         </div>
-        <div>
+        <div className="info-email">
           <span>Email:</span> {info.email}
         </div>
-       { handleEdit && <button onClick={handleEdit}>Edit</button>}
+        {handleEdit && <button onClick={handleEdit}>Edit</button>}
       </div>
     );
   }
@@ -35,7 +35,7 @@ class PersonInfoEdit extends Component {
   render() {
     const handleSub = this.props.handleInfoSub;
     return (
-      <div>
+      <div className="personal-info-edit">
         <form onSubmit={handleSub}>
           <div>
             <input
